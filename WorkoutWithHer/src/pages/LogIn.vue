@@ -1,10 +1,30 @@
 <template>
-    <h1>Login to Your Account</h1>
-    <p><input type="text" placeholder="Email" v-model="email" /></p>
-    <p><input type="password" placeholder="Password" v-model="password" /></p>
-    <p v-if="errMsg">{{ errMsg }}</p>
-    <p><button @click="signIn">Submit</button></p>
-  </template>
+  <div style="position:fixed; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+    <v-card style="padding: 3% 5%; width: 500px; height: 450px; border-radius: 20px; align-items: center; justify-content: center;" elevation="8">
+      <v-card-title><h1 class="cardtitle">Log In to an Account</h1></v-card-title>
+      <v-text-field
+        label="Email"
+        variant="outlined"
+        single-line
+        v-model="email"
+        type="text"
+      ></v-text-field>
+      <v-text-field
+        label="Password"
+        variant="outlined"
+        single-line
+        v-model="password"
+        type="password"
+      ></v-text-field>
+      <p v-if="errMsg">{{ errMsg }}</p>
+      <v-card-actions class="justify-center">
+        <v-btn variant="flat" color="pink-accent-1" @click="signIn">Submit</v-btn>
+      </v-card-actions>
+      <br/>
+      <p>Don't have an account? <v-btn to="/sign-up" variant="flat">Sign up</v-btn></p>
+    </v-card>
+  </div>
+</template>
   
   <script setup>
     import { ref } from 'vue'

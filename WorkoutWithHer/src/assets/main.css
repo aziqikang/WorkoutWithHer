@@ -26,9 +26,14 @@ a:link, a:visited {
   color: grey;
 }
 
+p:a {
+  text-decoration: none;
+  color: var(--cyclamen);
+}
+
 body {
   background-color: var(--lavendar-blush);
-  padding-top: 110px;
+  padding-top: 60px;
   overflow-x: hidden;
 }
 
@@ -64,6 +69,7 @@ header {
 	justify-content: center;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 }
+
 header .wrap {
 	padding: 0 2%;
 	width: 100%;
@@ -145,10 +151,16 @@ p {
   color: var(--cyclamen);
 }
 
-.outlinedButton {
-  
+.mybtn {
+  background-color: var(--cyclamen);
 }
 
-.filledButton {
-
+.cardtitle {
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  font-style: normal;
+  white-space: nowrap;
+  color: var(--black);
+  padding-bottom: 10%;
 }
