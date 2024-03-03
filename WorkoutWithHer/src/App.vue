@@ -1,47 +1,40 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div>
+    <header>
+        <div class="wrap">
+          <img src="./assets/logo.svg" alt="logo" width="40" height="40">
+          <nav id="navbar">
+              <router-link to="/" class="route"> Home </router-link>
+              <router-link to="/team" class="route"> Team </router-link>
+          </nav>
+        </div>
+    </header>
+    <div class="page">
+      <router-view />
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <!-- <footer>
+      footer
+    </footer> -->
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+<script setup>
+  import { ref, watchEffect } from 'vue' // used for conditional rendering
+  import firebase from "firebase/compat/app"
+    import "firebase/compat/auth"
+  import { useRouter } from 'vue-router'
+  const router = useRouter()
+  const isLoggedIn = ref(true)
+  // runs after firebase is initialized
+  firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        isLoggedIn.value = true // if we have a user
+      } else {
+        isLoggedIn.value = false // if we do not
+      }
+  })
+  const signOut = () => {
+    firebase.auth().signOut()
+    router.push('/')
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+</script>
