@@ -19,6 +19,14 @@ const router = createRouter({
       path: "/team",
       component: () => import("../pages/Team.vue"),
     },
+    {
+      path: "/feed",
+      component: () => import("../pages/Feed.vue"),
+    },
+    {
+      path: "/profile",
+      component: () => import("../pages/Profile.vue"),
+    },
   ],
 });
 

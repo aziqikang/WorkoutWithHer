@@ -7,6 +7,8 @@
               <router-link to="/" class="route"> Home </router-link>
               <router-link to="/team" class="route"> Team </router-link>
               <span v-if="isLoggedIn">
+                <router-link to="/feed" class="route"> Feed </router-link>
+                <router-link to="/profile" class="route"> Profile </router-link>
                 <button @click="signOut">Logout</button>
               </span>
           </nav>
