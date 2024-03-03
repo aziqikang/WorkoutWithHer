@@ -4,12 +4,13 @@
         <div class="wrap">
           <img src="./assets/logo.svg" alt="logo" width="40" height="40">
           <nav id="navbar">
-              <router-link to="/" class="route"> Home </router-link>
-              <router-link to="/team" class="route"> Team </router-link>
+              <span>
+                <router-link to="/" class="route"> Home </router-link>
+              </span>
               <span v-if="isLoggedIn">
                 <router-link to="/feed" class="route"> Feed </router-link>
                 <router-link to="/profile" class="route"> Profile </router-link>
-                <button @click="signOut">Logout</button>
+                <v-btn @click="signOut" variant="outlined" color="pink-accent-1">Logout</v-btn>
               </span>
           </nav>
         </div>

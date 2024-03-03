@@ -162,7 +162,8 @@ p {
   font-style: normal;
   white-space: nowrap;
   color: var(--black);
-  padding-bottom: 10%;
+  justify-self: center;
+  align-self: center;
 }
 
 gmp-map {

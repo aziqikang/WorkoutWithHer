@@ -9,5 +9,6 @@
             <v-btn to="/sign-up" variant="flat" color="pink-accent-1"> Sign Up </v-btn>
             <v-btn to="/log-in" variant="outlined" color="pink-accent-1"> Log In </v-btn>
         </div>
+        <img src="../assets/gym.png" width="700px" style="position:fixed; top:200px; right:30px;"/>
     </div>
 </template>
